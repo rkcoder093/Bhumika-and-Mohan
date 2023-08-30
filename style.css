@@ -1,0 +1,315 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Style the creative nav bar */
+.navbar {
+    background-color: #e3f2fd;
+    padding: 10px 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: transparent;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover {
+    color: #90caf9;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    background-color: #90caf9;
+}
+
+    /* Add this style block within the <head> section of your HTML document */
+    .animated-link {
+      transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  .animated-link:hover {
+      color: #ff5722; /* Change to your desired hover color */
+  }
+/* animated container */
+.about-section {
+  background-color: white; /* Set your desired background color */
+  padding: 40px 0; /* Adjust the padding as needed */
+  border-radius: 10px; /* Add some border-radius for a softer look */
+}
+
+.animated-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated-container.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zoom-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.05);
+}
+
+
+/* posts */
+.card-container {
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.card-container:hover .card {
+  background-color: #c71010; /* Change to your desired background color */
+}
+
+.card {
+  border: none; /* Remove the border */
+}
+
+/* Adjust margins for space between cards */
+.border {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* family mentbers */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.distinct-1.animate-on-scroll {
+  transition-delay: 0.2s; /* Delay for the animation */
+}
+
+.distinct-2.animate-on-scroll {
+  transition-delay: 0.4s; /* Delay for the animation */
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* timmer */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.countdown-number {
+  font-size: 2rem;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.countdown-separator {
+  font-size: 1.5rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.2rem;
+}
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.countdown-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-circle .countdown-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-circle .countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* wed image zoom */
+.image-container {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.zoom-image {
+  transition: transform 0.3s ease-in-out;
+  height: 325px;
+  width: auto;
+
+}
+
+.zoom-image:hover {
+  transform: scale(1.1); /* Adjust the scaling factor as needed */
+}
+
+/* callender */
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.calendar {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+}
+
+.month {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.calendar-table {
+  width: 100%;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Add heartbeat animation */
+@keyframes heartbeat {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
+.highlight {
+  animation: heartbeat 1s infinite;
+  color: #e74c3c; /* Red color */
+  font-weight: bold;
+}
+
+
+
+/* footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: slideUp 2s infinite alternate;
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+  }
+  .map {
+    width: 300px;
+    height: 150px;
+    background-color: #444;
+    margin: 10px auto;
+  }
+  .contact {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .social-icons {
+    font-size: 20px;
+  }
+  .social-icons a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+  }
