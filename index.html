@@ -11,389 +11,419 @@
 </head>
 <style>
     /* Reset some default styles */
-body, ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+    body,
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 
-/* Style the creative nav bar */
-.navbar {
-    background-color: #e3f2fd;
-    padding: 10px 20px;
-}
+    /* Style the creative nav bar */
+    .navbar {
+        background-color: #e3f2fd;
+        padding: 10px 20px;
+    }
 
-.navbar-nav {
-    display: flex;
-    align-items: center;
-}
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+    }
 
-.nav-item {
-    margin-right: 20px;
-}
+    .nav-item {
+        margin-right: 20px;
+    }
 
-.nav-link {
-    text-decoration: none;
-    color: #333;
-    position: relative;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
 
-.nav-link::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: transparent;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s, background-color 0.3s;
-}
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: transparent;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s, background-color 0.3s;
+    }
 
-.nav-link:hover {
-    color: #90caf9;
-}
+    .nav-link:hover {
+        color: #90caf9;
+    }
 
-.nav-link:hover::before {
-    transform: scaleX(1);
-    background-color: #90caf9;
-}
+    .nav-link:hover::before {
+        transform: scaleX(1);
+        background-color: #90caf9;
+    }
 
     /* Add this style block within the <head> section of your HTML document */
-.animated-link {
-      transition: color 0.3s ease; /* Smooth color transition */
-  }
-
-.animated-link:hover {
-      color: #ff5722; /* Change to your desired hover color */
-  }
-/* animated container */
-
-
-.zoom-on-hover {
-  transition: transform 0.3s ease;
-}
-
-.zoom-on-hover:hover {
-  transform: scale(1.05);
-}
-
-
-/* posts */
-.card-container {
-  transition: transform 0.3s ease;
-}
-
-.card-container:hover {
-  transform: scale(1.05);
-}
-
-.card-container:hover .card {
-  background-color: #c71010; /* Change to your desired background color */
-}
-
-.card {
-  border: none; /* Remove the border */
-}
-
-/* Adjust margins for space between cards */
-.border {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-/* family mentbers */
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.distinct-1.animate-on-scroll {
-  transition-delay: 0.2s; /* Delay for the animation */
-}
-
-.distinct-2.animate-on-scroll {
-  transition-delay: 0.4s; /* Delay for the animation */
-}
-
-.animate-on-scroll.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* timmer */
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-family: Arial, sans-serif;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.countdown-number {
-  font-size: 2rem;
-}
-
-.countdown-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-.countdown-separator {
-  font-size: 1.5rem;
-  margin-top: -0.3rem;
-  margin-bottom: 0.2rem;
-}
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  font-family: Arial, sans-serif;
-}
-
-.countdown-circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.countdown-circle .countdown-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #333;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.countdown-circle .countdown-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #666;
-}
-
-/* wed image zoom */
-.image-container {
-  display: inline-block;
-  overflow: hidden;
-}
-
-.zoom-image {
-  transition: transform 0.3s ease-in-out;
-  height: 325px;
-  width: auto;
-
-}
-
-.zoom-image:hover {
-  transform: scale(1.1); /* Adjust the scaling factor as needed */
-}
-
-/* callender */
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: white;
-}
-
-.calendar {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-
-}
-
-.month {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.calendar-table {
-  width: 100%;
-}
-
-th {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-td {
-  padding: 10px;
-  text-align: center;
-}
-
-/* Add heartbeat animation */
-@keyframes heartbeat {
-  0%, 100% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.1);
-  }
-}
-
-.highlight {
-  animation: heartbeat 1s infinite;
-  color: #e74c3c; /* Red color */
-  font-weight: bold;
-}
-
-
-
-/* footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    animation: slideUp 2s infinite alternate;
-  }
-  @keyframes slideUp {
-    0% {
-      transform: translateY(0);
-      opacity: 0.5;
+    .animated-link {
+        transition: color 0.3s ease;
+        /* Smooth color transition */
     }
-    100% {
-      transform: translateY(-20px);
-      opacity: 1;
-    }
-  }
-  .map {
-    width: 300px;
-    height: 150px;
-    background-color: #444;
-    margin: 10px auto;
-  }
-  .contact {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .social-icons {
-    font-size: 20px;
-  }
-  .social-icons a {
-    color: white;
-    margin: 0 8px;
-    text-decoration: none;
-  }
 
+    .animated-link:hover {
+        color: #ff5722;
+        /* Change to your desired hover color */
+    }
+
+    /* animated container */
+
+
+    .zoom-on-hover {
+        transition: transform 0.3s ease;
+    }
+
+    .zoom-on-hover:hover {
+        transform: scale(1.05);
+    }
+
+
+    /* posts */
+    .card-container {
+        transition: transform 0.3s ease;
+    }
+
+    .card-container:hover {
+        transform: scale(1.05);
+    }
+
+    .card-container:hover .card {
+        background-color: #c71010;
+        /* Change to your desired background color */
+    }
+
+    .card {
+        border: none;
+        /* Remove the border */
+    }
+
+    /* Adjust margins for space between cards */
+    .border {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* family mentbers */
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .distinct-1.animate-on-scroll {
+        transition-delay: 0.2s;
+        /* Delay for the animation */
+    }
+
+    .distinct-2.animate-on-scroll {
+        transition-delay: 0.4s;
+        /* Delay for the animation */
+    }
+
+    .animate-on-scroll.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* timmer */
+    .countdown-timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: Arial, sans-serif;
+    }
+
+    .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .countdown-number {
+        font-size: 2rem;
+    }
+
+    .countdown-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .countdown-separator {
+        font-size: 1.5rem;
+        margin-top: -0.3rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .countdown-timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: Arial, sans-serif;
+    }
+
+    .countdown-circle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown-circle .countdown-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #333;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .countdown-circle .countdown-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: #666;
+    }
+
+    /* wed image zoom */
+    .image-container {
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .zoom-image {
+        transition: transform 0.3s ease-in-out;
+        height: 325px;
+        width: auto;
+
+    }
+
+    .zoom-image:hover {
+        transform: scale(1.1);
+        /* Adjust the scaling factor as needed */
+    }
+
+    /* callender */
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+    }
+
+    .calendar {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+
+    }
+
+    .month {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .calendar-table {
+        width: 100%;
+    }
+
+    th {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Add heartbeat animation */
+    @keyframes heartbeat {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .highlight {
+        animation: heartbeat 1s infinite;
+        color: #e74c3c;
+        /* Red color */
+        font-weight: bold;
+    }
+
+
+
+    /* footer */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        animation: slideUp 2s infinite alternate;
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(0);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateY(-20px);
+            opacity: 1;
+        }
+    }
+
+    .map {
+        width: 300px;
+        height: 150px;
+        background-color: #444;
+        margin: 10px auto;
+    }
+
+    .contact {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        font-size: 20px;
+    }
+
+    .social-icons a {
+        color: white;
+        margin: 0 8px;
+        text-decoration: none;
+    }
+
+        /* Add your CSS styling here */
+        .bio {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .bio img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
 </style>
 
 <body style="background-image: url(./img/);">
-
     <!-- nav bar -->
     <div class="container-fluid m-0 p-0">
-        <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg" style="background-color: white">
             <div class="container-fluid">
-                <a class="navbar-brand animated-link" href="#" style="font-family: cursive;">Bhumika Weds Mohan</a>
+                <a href="/"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <img class="bi me-2" src="./img/wed.png" width="60" height="52">
+                    <span class="fs-4" style="font-family: cursive; color:#ff5722">Bhumika Weds Mohan</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active animated-link" aria-current="page" href="/">Home</a>
+                            <a class="nav-link  animated-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Events
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="./engagment.html">Engagment</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="./mehandi.html">Mehndi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="./snageet.html">Sangeet</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="./haldi.html">Haldi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="#">Reception</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link animated-link" href="#">Bidai</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link animated-link" href="./engagment.html">Engagment</a>
+                            <a class="nav-link  animated-link" aria-current="page" href="./album.html">Albums</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link animated-link" href="./mehandi.html">Mehndi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animated-link" href="./snageet.html">Sangeet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animated-link" href="./haldi.html">Haldi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animated-link" href="#">Reception</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link animated-link" href="#">Bidai</a>
+                            <a class="nav-link  animated-link" aria-current="page" href="#">About Us</a>
                         </li>
                     </ul>
+                </div>
+                <!-- Countdown timer placeholder -->
+                <div id="countdown" class="countdown-timer">
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">days</div>
+                    </div>
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">hours</div>
+                    </div>
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">minutes</div>
+                    </div>
+                    <div class="countdown-circle">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">seconds</div>
+                    </div>
                 </div>
             </div>
         </nav>
     </div>
 
-<!-- first one  -->
-    <div class="container-fluid d-flex flex-row flex-wrap justify-content-around pb-0 mt-2" style="align-items: center; position: relative;">
-        <!-- <h1 class="text-body-emphasis">Let's Celebrate Together</h1> -->
-        <div class="image-container">
-            <img src="./img/wed.png" alt="" class="zoom-image">
-        </div>
-    <div style="text-align: center;;">
-        <h1 style="font-family: fantasy;">Save Our Date</h1>
-        <h2 style="font-family: fantasy;">Celebrate With Us.</h2>
-        <h3 style="font-family: fantasy;">On our Special occasion</h3>
-
-    </div>
-    <div class="calendar m-0">
-        <div class="month">
-            <h2>November</h2>
-        </div>
-        <table class="calendar-table">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Calendar days will be generated here dynamically using JavaScript -->
-            </tbody>
-        </table>
-    </div>
-        <!-- <img src="image2.jpg" class="corner-image top-right">
-        <img src="image3.jpg" class="corner-image bottom-left">
-        <img src="image4.jpg" class="corner-image bottom-right"> -->
-    </div>
-    
     <!-- crosol -->
-    <div class="container-fluid mt-2 p-0">
+    <div class="container-fluid  p-0">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -404,22 +434,22 @@ td {
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./img/13.jpg" class="d-block w-100" alt="..." style="height: auto;">
+                <div class="carousel-item active"style="background-color: antiquewhite;">
+                    <img src="./img/weding_invitation.jpg" class="d-flex justify-content-center m-0" alt="..." style="position: relative;left: 40rem;width: 43rem;">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/12.jpg" class="d-block w-100" alt="..." style="height: auto;">
+                    <img src="./img/13.jpg" alt="..." class="d-block w-100" height="auto">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/13.jpg" class="d-block w-100" alt="..." style="height: auto;">
+                    <img src="./img/12.jpg" class="d-block" alt="..." style="height:auto;position: relative;left: 40rem;width: 43rem;">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
@@ -438,46 +468,69 @@ td {
             </button>
         </div>
     </div>
-
+    <div class="bio">
+        <h2>Bride: [Bride's Name]</h2>
+        <img src="insert_bride_photo_url_here" alt="[Bride's Name]">
+        <p>
+            Meet our radiant bride, [Bride's Name]. Originally from [Hometown], she has always had a passion for [mention a hobby or interest], which is where she first crossed paths with [Groom's Name]. Her infectious smile and warm personality light up any room, and her love for [mention something they both love] is what brought her and [Groom's Name] together. [Bride's Name] is looking forward to starting this beautiful journey with the love of her life.
+        </p>
+    </div>
+    <div class="bio">
+        <h2>Groom: [Groom's Name]</h2>
+        <img src="insert_groom_photo_url_here" alt="[Groom's Name]">
+        <p>
+            Introducing the dashing groom, [Groom's Name]. Born and raised in [Hometown], he's known for his [mention a unique trait or interest] and a heart full of adventure. It was his shared love for [mention something they both love] that brought him together with [Bride's Name], and they've been inseparable ever since. [Groom's Name] can't wait to embark on this exciting journey into wedded bliss with his soulmate.
+        </p>
+    </div>
     <!-- about us -->
-    <div class="container-fluid d-flex flex-column pb-0 animated-container about-section" style="align-items: center;">
-        <h1 class="text-body-emphasis">About Us</h1>
-        <p class="fs-5 col-md-8">Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Debitis veniam est hic voluptas cumque rem, aperiam molestiae. Omnis, facere!
-            Voluptates, cupiditate. Repellat eum, tempora cupiditate dolores aperiam voluptates culpa optio eius, velit
-            tempore, cum harum quod exercitationem explicabo minima ipsum magnam? Esse vero, quod ad consectetur ipsa
-            voluptatibus. Voluptatum repellat minima iusto praesentium incidunt? Modi cupiditate accusantium veritatis
-            doloremque sequi fugiat sunt? Consequatur voluptatum repellat quia. Possimus, fugit obcaecati quasi
-            cupiditate veritatis expedita, doloribus, cumque autem perspiciatis ex pariatur dolorem? Facilis qui
-            molestiae vel facere veritatis labore numquam quasi soluta itaque, explicabo voluptatum est eaque ratione
-            nesciunt, molestias ad a!</p>
-
-        <!-- Countdown timer placeholder -->
-        <div id="countdown" class="mb-5 countdown-timer">
-            <div class="countdown-circle">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">days</div>
+    <div class="container-fluid text-center">
+        <h1 class="text-body-emphasis">Venu Details</h1>
+    </div>
+    <div class="container-fluid" m-0 p-0>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        event name
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>event deatails1</h1>
+                    </div>
+                </div>
             </div>
-            <div class="countdown-circle">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">hours</div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        event name
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>event deatils 2</h1>
+                    </div>
+                </div>
             </div>
-            <div class="countdown-circle">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">minutes</div>
-            </div>
-            <div class="countdown-circle">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">seconds</div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        event name
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>event deatails3</h1>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-        <hr class="col-3 col-md-2 mb-5">
     </div>
-
     <!-- story from them -->
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary zoom-on-hover">
+    <div class="p-4 p-md-5 mb-4 mt-2 rounded text-body-emphasis bg-body-secondary zoom-on-hover">
         <div class="col-lg-6 px-0">
             <h1 class="display-4 fst-italic">story of them</h1>
             <p class="lead my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure omnis aliquam vel,
@@ -576,63 +629,9 @@ td {
     </div>
 
 
-    <!-- aboput their family -->
-    <div class="container-fluid marketing ">
-        <hr class="featurette-divider">
-        <div class="row featurette animate-on-scroll distinct-1">
-            <div class="col-md-7 item-center">
-                <h1 class="featurette-heading fw-normal lh-1">Name</h1>
-                <p class="lead"><b>Description</b></p>
-                <div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum maiores dicta dolorum. Et fugiat
-                        commodi ipsa placeat eligendi dolor sit ullam cum aspernatur, non quis adipisci ad sint
-                        accusamus quas, molestias similique doloremque officiis molestiae? Esse?</p>
-                </div>
-            </div>
-            <div class="col-md-5">
+<!-- footer -->
 
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100%"
-                    height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x400"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
-                        fill="var(--bs-secondary-color)" dy=".3em">400x500</text>
-                </svg>
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        <div class="row featurette animate-on-scroll distinct-2">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">Name</h2>
-                <p class="lead">Discription</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique natus iusto sed nam voluptates,
-                    dolorem illum error quo libero cupiditate vero eaque. Quisquam fugit quaerat doloribus, saepe amet,
-                    aut quod, consequuntur esse in illum sit.
-                </p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100%"
-                    height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x400"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
-                        fill="var(--bs-secondary-color)" dy=".3em">400x500</text>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <!-- footer -->
 
-    <div class="footer" style="bottom: auto;">
-        <div class="map"></div>
-        <p class="contact">Contact: +123-456-789</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook">facebook</i></a>
-            <a href="#"><i class="fab fa-twitter">twitter</i></a>
-            <a href="#"><i class="fab fa-instagram">instagram</i></a>
-        </div>
-        <p>© 2023 Your Company. All rights reserved.</p>
-    </div>
 
     <script>
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -738,7 +737,7 @@ td {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="calendar.js"></script>
 
 </body>
