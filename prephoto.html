@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+      }
+
+      div.gallery:hover {
+        border: 1px solid #777;
+      }
+
+      div.gallery img {
+        width: 100%;
+        height: auto;
+      }
+
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* Style the creative nav bar */
+      .navbar {
+        background-color: #e3f2fd;
+        padding: 10px 20px;
+      }
+
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-item {
+        margin-right: 20px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: transparent;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #90caf9;
+      }
+
+      .nav-link:hover::before {
+        transform: scaleX(1);
+        background-color: #90caf9;
+      }
+
+      /* Add this style block within the <head> section of your HTML document */
+      .animated-link {
+        transition: color 0.3s ease;
+        /* Smooth color transition */
+      }
+
+      .animated-link:hover {
+        color: #ff5722;
+        /* Change to your desired hover color */
+      }
+
+      /* animated container */
+
+      .zoom-on-hover {
+        transition: transform 0.3s ease;
+      }
+
+      .zoom-on-hover:hover {
+        transform: scale(1.05);
+      }
+
+      /* posts */
+      .card-container {
+        transition: transform 0.3s ease;
+      }
+
+      .card-container:hover {
+        transform: scale(1.05);
+      }
+
+      .card-container:hover .card {
+        background-color: #c71010;
+        /* Change to your desired background color */
+      }
+
+      .card {
+        border: none;
+        /* Remove the border */
+      }
+
+      /* Adjust margins for space between cards */
+      .border {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* family mentbers */
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .distinct-1.animate-on-scroll {
+        transition-delay: 0.2s;
+        /* Delay for the animation */
+      }
+
+      .distinct-2.animate-on-scroll {
+        transition-delay: 0.4s;
+        /* Delay for the animation */
+      }
+
+      .animate-on-scroll.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* timmer */
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: Arial, sans-serif;
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .countdown-number {
+        font-size: 2rem;
+      }
+
+      .countdown-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+
+      .countdown-separator {
+        font-size: 1.5rem;
+        margin-top: -0.3rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: Arial, sans-serif;
+      }
+
+      .countdown-circle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .countdown-circle .countdown-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #333;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .countdown-circle .countdown-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <div class="container-fluid m-0 p-0">
+      <nav class="navbar navbar-expand-lg" style="background-color: white">
+        <div class="container-fluid">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          >
+            <img class="bi me-2" src="./img/wed.png" width="60" height="52" />
+            <span class="fs-4" style="font-family: cursive; color: #ff5722"
+              >Bhumiks&Mohan</span
+            >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link animated-link" aria-current="page" href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Events
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="./engagment.html"
+                      >Engagment</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="./mehandi.html"
+                      >Mehndi</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="./snageet.html"
+                      >Sangeet</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="./haldi.html"
+                      >Haldi</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Reception</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="./prephoto.html"
+                      >pre Wedding shoot</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link animated-link"
+                  aria-current="page"
+                  href="./album.html"
+                  >Albums</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link animated-link" aria-current="page" href="#"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Countdown timer placeholder -->
+          <div
+            id="countdown"
+            class="countdown-timer row justify-content-center"
+          >
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">days</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">hours</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">minutes</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- galary -->
+    <div class="containerfluid m-0 p-0 d-flex justify-content-around flex-wrap align-items-center ">
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps1.jpg">
+          <img
+            src="./img/prephoto/pps1.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps3.jpg">
+          <img
+            src="./img/prephoto/pps3.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps4.jpg">
+          <img
+            src="./img/prephoto/pps4.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps12.jpg">
+          <img
+            src="./img/prephoto/pps12.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps13.jpg">
+          <img
+            src="./img/prephoto/pps13.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps20.jpg">
+          <img
+            src="./img/prephoto/pps20.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      
+      
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps21.jpg">
+          <img
+            src="./img/prephoto/pps21.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps19.jpg">
+          <img
+            src="./img/prephoto/pps19.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps14.jpg">
+          <img
+            src="./img/prephoto/pps14.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps17.jpg">
+          <img
+            src="./img/prephoto/pps17.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps2.jpg">
+          <img
+            src="./img/prephoto/pps2.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps5.jpg">
+          <img
+            src="./img/prephoto/pps5.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps6.jpg">
+          <img
+            src="./img/prephoto/pps6.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps7.jpg">
+          <img
+            src="./img/prephoto/pps7.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps8.jpg">
+          <img
+            src="./img/prephoto/pps8.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps9.jpg">
+          <img
+            src="./img/prephoto/pps9.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps10.jpg">
+          <img
+            src="./img/prephoto/pps10.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps11.jpg">
+          <img
+            src="./img/prephoto/pps11.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps15.jpg">
+          <img
+            src="./img/prephoto/pps15.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps16.jpg">
+          <img
+            src="./img/prephoto/pps16.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps18.jpg">
+          <img
+            src="./img/prephoto/pps18.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps22.jpg">
+          <img
+            src="./img/prephoto/pps22.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps29.jpg">
+          <img
+            src="./img/prephoto/pps29.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps30.jpg">
+          <img
+            src="./img/prephoto/pps30.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps25.jpg">
+          <img
+            src="./img/prephoto/pps25.jpg"
+            alt="Cinque Terre"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps26.jpg">
+          <img
+            src="./img/prephoto/pps26.jpg"
+            alt="Forest"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps27.jpg">
+          <img
+            src="./img/prephoto/pps27.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps23.jpg">
+          <img
+            src="./img/prephoto/pps23.jpg"
+            alt="Northern Lights"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="./img/prephoto/pps24.jpg">
+          <img
+            src="./img/prephoto/pps24.jpg"
+            alt="Mountains"
+            width="600"
+            height="400"
+          />
+        </a>
+      </div>
+
+    </div>
+
+    <script>
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+      function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
+
+      function animateElements() {
+        animatedElements.forEach((element) => {
+          if (isElementInViewport(element)) {
+            element.classList.add("animate");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", animateElements);
+      animateElements(); // Trigger on page load
+    </script>
+
+    <script>
+      // JavaScript to add animation class when the element comes into view
+      const animatedContainers = document.querySelectorAll(
+        ".animated-container"
+      );
+
+      function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
+
+      function animateContainers() {
+        animatedContainers.forEach((container) => {
+          if (isElementInViewport(container)) {
+            container.classList.add("animate");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", animateContainers);
+      animateContainers(); // Trigger on page load
+    </script>
+
+    <script>
+      // Set the target date (November 30, 2023)
+      const targetDate = new Date("2023-11-30T00:00:00").getTime();
+
+      // Update the countdown every second
+      const countdown = document.getElementById("countdown");
+      const countdownInterval = setInterval(updateCountdown, 1000);
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining > 0) {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          countdown.innerHTML = `
+            <div class="countdown-timer">
+                <div class="countdown-item">${days}d</div>
+                <div class="countdown-item">${hours}h</div>
+                <div class="countdown-item">${minutes}m</div>
+                <div class="countdown-item">${seconds}s</div>
+            </div>
+        `;
+        } else {
+          clearInterval(countdownInterval);
+          countdown.innerHTML = "Countdown expired";
+        }
+      }
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining > 0) {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("minutes").textContent = String(
+            minutes
+          ).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(
+            seconds
+          ).padStart(2, "0");
+        } else {
+          clearInterval(countdownInterval);
+          countdown.innerHTML = "Countdown expired";
+        }
+      }
+
+      // Call the updateCountdown function initially
+      updateCountdown();
+    </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+        </script>
+    <script src="calendar.js"></script>
+  </body>
+</html>
