@@ -1,749 +1,997 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wedding</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <!-- <link rel="stylesheet" href="./Style.css"> -->
-</head>
-<style>
+  </head>
+  <style>
     /* Reset some default styles */
     body,
     ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     /* Style the creative nav bar */
     .navbar {
-        background-color: #e3f2fd;
-        padding: 10px 20px;
+      background-color: #e3f2fd;
+      padding: 10px 20px;
     }
 
     .navbar-nav {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
     }
 
     .nav-item {
-        margin-right: 20px;
+      margin-right: 20px;
     }
 
     .nav-link {
-        text-decoration: none;
-        color: #333;
-        position: relative;
-        font-weight: bold;
-        transition: color 0.3s;
+      text-decoration: none;
+      color: #333;
+      position: relative;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
     .nav-link::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: transparent;
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.3s, background-color 0.3s;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: transparent;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     .nav-link:hover {
-        color: #90caf9;
+      color: #90caf9;
     }
 
     .nav-link:hover::before {
-        transform: scaleX(1);
-        background-color: #90caf9;
+      transform: scaleX(1);
+      background-color: #90caf9;
     }
 
     /* Add this style block within the <head> section of your HTML document */
     .animated-link {
-        transition: color 0.3s ease;
-        /* Smooth color transition */
+      transition: color 0.3s ease;
+      /* Smooth color transition */
     }
 
     .animated-link:hover {
-        color: #ff5722;
-        /* Change to your desired hover color */
+      color: #ff5722;
+      /* Change to your desired hover color */
     }
 
     /* animated container */
 
-
     .zoom-on-hover {
-        transition: transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .zoom-on-hover:hover {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
-
 
     /* posts */
     .card-container {
-        transition: transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .card-container:hover {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
 
     .card-container:hover .card {
-        background-color: #c71010;
-        /* Change to your desired background color */
+      background-color: #c71010;
+      /* Change to your desired background color */
     }
 
     .card {
-        border: none;
-        /* Remove the border */
+      border: none;
+      /* Remove the border */
     }
 
     /* Adjust margins for space between cards */
     .border {
-        margin-right: 10px;
-        margin-bottom: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
 
     /* family mentbers */
 
     .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .distinct-1.animate-on-scroll {
-        transition-delay: 0.2s;
-        /* Delay for the animation */
+      transition-delay: 0.2s;
+      /* Delay for the animation */
     }
 
     .distinct-2.animate-on-scroll {
-        transition-delay: 0.4s;
-        /* Delay for the animation */
+      transition-delay: 0.4s;
+      /* Delay for the animation */
     }
 
     .animate-on-scroll.animate {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* timmer */
     .countdown-timer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-family: Arial, sans-serif;
     }
 
     .countdown-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
     }
 
     .countdown-number {
-        font-size: 2rem;
+      font-size: 2rem;
     }
 
     .countdown-label {
-        font-size: 0.8rem;
-        text-transform: uppercase;
+      font-size: 0.8rem;
+      text-transform: uppercase;
     }
 
     .countdown-separator {
-        font-size: 1.5rem;
-        margin-top: -0.3rem;
-        margin-bottom: 0.2rem;
+      font-size: 1.5rem;
+      margin-top: -0.3rem;
+      margin-bottom: 0.2rem;
     }
 
     .countdown-timer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-family: Arial, sans-serif;
     }
 
     .countdown-circle {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .countdown-circle .countdown-number {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #fff;
-        background-color: #333;
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #333;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .countdown-circle .countdown-label {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        color: #666;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #666;
     }
 
     /* wed image zoom */
     .image-container {
-        display: inline-block;
-        overflow: hidden;
+      display: inline-block;
+      overflow: hidden;
     }
 
     .zoom-image {
-        transition: transform 0.3s ease-in-out;
-        height: 325px;
-        width: auto;
-
+      transition: transform 0.3s ease-in-out;
+      height: 325px;
+      width: auto;
     }
 
     .zoom-image:hover {
-        transform: scale(1.1);
-        /* Adjust the scaling factor as needed */
+      transform: scale(1.1);
+      /* Adjust the scaling factor as needed */
     }
 
     /* callender */
     /* Reset some default styles */
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background-color: white;
+      font-family: Arial, sans-serif;
+      background-color: white;
     }
 
     .calendar {
-        max-width: 400px;
-        margin: 0 auto;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
     }
 
     .month {
-        text-align: center;
-        margin-bottom: 10px;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     .calendar-table {
-        width: 100%;
+      width: 100%;
     }
 
     th {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
     }
 
     td {
-        padding: 10px;
-        text-align: center;
+      padding: 10px;
+      text-align: center;
     }
 
     /* Add heartbeat animation */
     @keyframes heartbeat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
 
-        0%,
-        100% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
+      50% {
+        transform: scale(1.1);
+      }
     }
 
     .highlight {
-        animation: heartbeat 1s infinite;
-        color: #e74c3c;
-        /* Red color */
-        font-weight: bold;
+      animation: heartbeat 1s infinite;
+      color: #e74c3c;
+      /* Red color */
+      font-weight: bold;
     }
 
     /* Add your CSS styling here */
     .bio {
-        margin: 20px;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
 
     .bio img {
-        max-width: 200px;
-        border-radius: 50%;
-        margin-bottom: 10px;
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
     }
 
     .profession {
-        font-style: italic;
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        text-align: center;
-        padding: 20px;
+      font-style: italic;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
     }
 
     .description {
-        margin: 20px 0;
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        text-align: center;
-        padding: 20px;
+      margin: 20px 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
     }
-</style>
+  </style>
 
-<body >
+  <body>
     <!-- nav bar -->
     <div class="container-fluid m-0 p-0">
-        <nav class="navbar navbar-expand-lg" style="background-color: white">
-            <div class="container-fluid">
-                <a href="/"
-                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <img class="bi me-2" src="./img/wed.png" width="60" height="52">
-                    <span class="fs-4" style="font-family: cursive; color:#ff5722">Bhumiks&Mohan</span>
+      <nav class="navbar navbar-expand-lg" style="background-color: white">
+        <div class="container-fluid">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          >
+            <img class="bi me-2" src="./img/wed.png" width="60" height="52" />
+            <span class="fs-4" style="font-family: cursive; color: #ff5722"
+              >Bhumiks&Mohan</span
+            >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a
+                  class="nav-link animated-link"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Events
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                            <a class="nav-link  animated-link" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Events
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="./prephoto.html">Pre Wedding Shoot</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="#">Engagment</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="#">Mehndi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="#">Sangeet</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="#">Haldi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link animated-link" href="#">Reception</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- <li class="nav-item">
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#"
+                      >Pre Wedding Shoot</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Engagment</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Mehndi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Sangeet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Haldi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link animated-link" href="#">Reception</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
                             <a class="nav-link  animated-link" aria-current="page" href="./album.html">Albums</a>
                         </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link  animated-link" aria-current="page" href="#">About Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Countdown timer placeholder -->
-                <div id="countdown" class="countdown-timer row justify-content-center">
-                    <div class="col-auto">
-                        <div class="countdown-circle">
-                            <div class="countdown-number" id="days">00</div>
-                            <div class="countdown-label">days</div>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="countdown-circle">
-                            <div class="countdown-number" id="hours">00</div>
-                            <div class="countdown-label">hours</div>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="countdown-circle">
-                            <div class="countdown-number" id="minutes">00</div>
-                            <div class="countdown-label">minutes</div>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="countdown-circle">
-                            <div class="countdown-number" id="seconds">00</div>
-                            <div class="countdown-label">seconds</div>
-                        </div>
-                    </div>
-                </div>
-                
+              <li class="nav-item">
+                <a class="nav-link animated-link" aria-current="page" href="#"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Countdown timer placeholder -->
+          <div
+            id="countdown"
+            class="countdown-timer row justify-content-center"
+          >
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">days</div>
+              </div>
             </div>
-        </nav>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">hours</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">minutes</div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="countdown-circle">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
 
     <!-- crosol -->
-    <div class="container-fluid  p-0 border-top border-4 border-dark">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
-                    aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
-                    aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
-                    aria-label="Slide 8"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active text-center" >
-                    <img src="./img/201.jpg" class="mx-auto d-block img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-
-                        <!--<p>Some representative placeholder content for the first slide.</p> -->
-                    </div>
-                </div>
-                
-                <div class="carousel-item text-center">
-                    <img src="./img/13.jpg" alt="..." class="img-fluid" style="max-height: 60rem;">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/12.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/weding_invitation.png" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5><a class="btn btn-dark" href="https://maps.app.goo.gl/jYkySicb4KCpTGPx8"
-                            target="_blank">Location</a></h5>
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/200.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/203.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/204.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-                <div class="carousel-item text-center">
-                    <img src="./img/205.jpg" class="img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <!-- <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p> -->
-                    </div>
-                </div>
-            </div>
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <div class="container-fluid p-0 border-top border-4 border-dark">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="5"
+            aria-label="Slide 6"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="6"
+            aria-label="Slide 7"
+          ></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img
+              src="./img/12.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img
+              src="./img/201.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img
+              src="./img/11.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img
+              src="./img/204.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img
+              src="./img/205.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item  text-center">
+            <img
+              src="./img/13.jpg"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img
+              src="./img/weding_invitation.png"
+              class="mx-auto d-block img-fluid"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <!--<p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
 
     <!-- profile -->
-    <div class="container-fluid border-top border-4 border-danger" style="background-color: #90caf9;">
-        <div class="row d-flex justify-content-around mt-1">
-            <div class="col-lg-4 text-center">
-              <img src="./img/prephoto/pps9.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"  role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <h2 class="fw-normal">Bhumika</h2>
-              <div class="profession">Chemical Engineer (2020)</div>
-              <div class="description">Proud Sitian | Ex Alvasian 2016</div>
-              <div class="description">Graceful Dancer | Creative Thinker | Short Temper</div>
-              <div class="description">Travelling</div>
-            </div><!-- /.col-lg-4 -->
-
-            <div class="col-lg-4 text-center">
-                <img src="./img/102 (Custom).jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140"  role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <h2 class="fw-normal">Mohan G</h2>
-                <div class="profession">Electrical and Electronic Engineering (2019)</div>
-                <div class="description">DIT</div>
-                <div class="description">Kind and down to earth</div>
-                <div class="description">Travelling | Playing Badminton | cycling</div>
-            </div><!-- /.col-lg-4 -->
+    <div
+      class="container-fluid border-top border-4 border-danger"
+      style="
+        background-image: url(./img/inv1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="row d-flex justify-content-around mt-1">
+        <div class="col-lg-4 text-center">
+          <img
+            src="./img/inv4.jpg"
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            role="img"
+            aria-label="Placeholder"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          />
+          <h2 class="fw-normal profession mt-2">Bhumika</h2>
+          <div class="profession">Chemical Engineer (2020)</div>
+          <div class="description">Proud Sitian | Ex Alvasian 2016</div>
+          <div class="description">Graceful Dancer | Creative Thinker</div>
+          <div class="description">Travelling</div>
         </div>
+        <!-- /.col-lg-4 -->
+
+        <div class="col-lg-4 text-center">
+          <img
+            src="./img/inv3.jpg"
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            role="img"
+            aria-label="Placeholder"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          />
+          <h2 class="fw-normal profession mt-2">Mohan G</h2>
+          <div class="profession">
+            Electrical and Electronic Engineering (2019)
+          </div>
+          <div class="description">DIT, Delhi</div>
+          <div class="description">Kind | Down to Earth</div>
+          <div class="description">
+            Travelling | Playing Badminton | cycling
+          </div>
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
     </div>
 
     <!-- about us -->
     <div class="container-fluid text-center">
-        <h1 class="text-body-emphasis">Venue Details</h1>
+      <h1 class="text-body-emphasis">Venue Details</h1>
     </div>
     <div class="container-fluid" m-0 p-0>
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        RECEPTION
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body text-center">
-                        <div>
-                            <h5 class="mb-3">Date: 29-Nov-2023</h5>
-                            <h5 class="mb-3">Time: 6:30 Onwards</h5>
-                            <p class="mb-0">Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE, NELAMANGALA TQ. BENGALURU RURAL 562111</p>
-                        </div>
-                    </div>
-                </div>
-                
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseone"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              ENGAGMENT CEREMONY
+            </button>
+          </h2>
+          <div
+            id="collapseone"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body text-center">
+              <div>
+                <h5 class="mb-3">Date: ?</h5>
+                <h5 class="mb-3">Time: 1:30 PM</h5>
+                <p class="mb-0">
+                  Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE,
+                  NELAMANGALA TQ. BENGALURU RURAL 562111
+                </p>
+              </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        MUHURTAM
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body text-center">
-                        <div>
-                            <h5 class="mb-3">Date: 29-Nov-2023</h5>
-                            <h5 class="mb-3">Time: 6:30 Onwards</h5>
-                            <p class="mb-0">Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE, NELAMANGALA TQ. BENGALURU RURAL 562111</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        event name
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <h1>event deatails3</h1>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsetwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              HALDI AND MEHENDI
+            </button>
+          </h2>
+          <div
+            id="collapsetwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body text-center">
+              <div>
+                <h5 class="mb-3">Date: 28-Nov-2023</h5>
+                <h5 class="mb-3">Time: MORNING ONWARDS</h5>
+                <p class="mb-0">
+                  Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE,
+                  NELAMANGALA TQ. BENGALURU RURAL 562111
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsethree"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              SANGEET CEREMONY
+            </button>
+          </h2>
+          <div
+            id="collapsethree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body text-center">
+              <div>
+                <h5 class="mb-3">Date: 28-Nov-2023</h5>
+                <h5 class="mb-3">Time: 5:00 PM Onwards</h5>
+                <p class="mb-0">
+                  Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE,
+                  NELAMANGALA TQ. BENGALURU RURAL 562111
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              RECEPTION
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body text-center">
+              <div>
+                <h5 class="mb-3">Date: 29-Nov-2023</h5>
+                <h5 class="mb-3">Time: 6:30 Onwards</h5>
+                <p class="mb-0">
+                  Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE,
+                  NELAMANGALA TQ. BENGALURU RURAL 562111
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              MUHURTAM
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body text-center">
+              <div>
+                <h5 class="mb-3">Date: 30-Nov-2023</h5>
+                <h5 class="mb-3">Time: 9:00 AM to 9:45 AM</h5>
+                <p class="mb-0">
+                  Location: B R T BHAVANA SHIVAGANGE ROAD, DABASPETE,
+                  NELAMANGALA TQ. BENGALURU RURAL 562111
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- story from them -->
-    <div class="p-4 p-md-5 mb-4 mt-2 rounded text-body-emphasis bg-body-secondary zoom-on-hover">
-        <div class="col-lg-6 px-0">
-            <h1 class="display-4 fst-italic">story of them</h1>
-            <p class="lead my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure omnis aliquam vel,
-                cupiditate, officiis corrupti veniam, aperiam distinctio quae explicabo optio beatae dolorum dolorem
-                libero laudantium soluta similique tempore officia earum fuga molestias impedit.</p>
-            <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
-        </div>
+    <div
+      class="p-4 p-md-5 mb-4 mt-2 rounded text-body-emphasis bg-body-secondary zoom-on-hover"
+    >
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">story of them</h1>
+        <p class="lead my-3">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure omnis
+          aliquam vel, cupiditate, officiis corrupti veniam, aperiam distinctio
+          quae explicabo optio beatae dolorum dolorem libero laudantium soluta
+          similique tempore officia earum fuga molestias impedit.
+        </p>
+        <p class="lead mb-0">
+          <a href="#" class="text-body-emphasis fw-bold">Continue reading...</a>
+        </p>
+      </div>
     </div>
-
 
     <!-- event posts -->
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-md-6">
-                <div class="card-container">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-body-secondary">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
-                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                                Continue reading
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="./img/1.png" alt="" width="200" height="250">
-                        </div>
-                    </div>
-                </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card-container">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis"
+                  >World</strong
+                >
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-body-secondary">Nov 12</div>
+                <p class="card-text mb-auto">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <a
+                  href="#"
+                  class="icon-link gap-1 icon-link-hover stretched-link"
+                >
+                  Continue reading
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="./img/1.png" alt="" width="200" height="250" />
+              </div>
             </div>
-            <!-- Repeat for other cards -->
-            <div class="col-md-6">
-                <div class="card-container">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-body-secondary">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
-                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                                Continue reading
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="./img/1.png" alt="" width="200" height="250">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-container">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-body-secondary">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
-                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                                Continue reading
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="./img/1.png" alt="" width="200" height="250">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-container">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-body-secondary">Nov 12</div>
-                            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural
-                                lead-in to additional content.</p>
-                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                                Continue reading
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <img src="./img/1.png" alt="" width="200" height="250">
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <!-- Repeat for other cards -->
+        <div class="col-md-6">
+          <div class="card-container">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis"
+                  >World</strong
+                >
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-body-secondary">Nov 12</div>
+                <p class="card-text mb-auto">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <a
+                  href="#"
+                  class="icon-link gap-1 icon-link-hover stretched-link"
+                >
+                  Continue reading
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="./img/1.png" alt="" width="200" height="250" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-container">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis"
+                  >World</strong
+                >
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-body-secondary">Nov 12</div>
+                <p class="card-text mb-auto">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <a
+                  href="#"
+                  class="icon-link gap-1 icon-link-hover stretched-link"
+                >
+                  Continue reading
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="./img/1.png" alt="" width="200" height="250" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card-container">
+            <div
+              class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis"
+                  >World</strong
+                >
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-body-secondary">Nov 12</div>
+                <p class="card-text mb-auto">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+                <a
+                  href="#"
+                  class="icon-link gap-1 icon-link-hover stretched-link"
+                >
+                  Continue reading
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="./img/1.png" alt="" width="200" height="250" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
 
     <!-- footer -->
 
-
-
     <script>
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
-        function isElementInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-            );
-        }
+      function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
 
-        function animateElements() {
-            animatedElements.forEach(element => {
-                if (isElementInViewport(element)) {
-                    element.classList.add('animate');
-                }
-            });
-        }
+      function animateElements() {
+        animatedElements.forEach((element) => {
+          if (isElementInViewport(element)) {
+            element.classList.add("animate");
+          }
+        });
+      }
 
-        window.addEventListener('scroll', animateElements);
-        animateElements(); // Trigger on page load
+      window.addEventListener("scroll", animateElements);
+      animateElements(); // Trigger on page load
     </script>
 
     <script>
-        // JavaScript to add animation class when the element comes into view
-        const animatedContainers = document.querySelectorAll('.animated-container');
+      // JavaScript to add animation class when the element comes into view
+      const animatedContainers = document.querySelectorAll(
+        ".animated-container"
+      );
 
-        function isElementInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-            );
-        }
+      function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
 
-        function animateContainers() {
-            animatedContainers.forEach(container => {
-                if (isElementInViewport(container)) {
-                    container.classList.add('animate');
-                }
-            });
-        }
+      function animateContainers() {
+        animatedContainers.forEach((container) => {
+          if (isElementInViewport(container)) {
+            container.classList.add("animate");
+          }
+        });
+      }
 
-        window.addEventListener('scroll', animateContainers);
-        animateContainers(); // Trigger on page load
+      window.addEventListener("scroll", animateContainers);
+      animateContainers(); // Trigger on page load
     </script>
 
     <script>
-        // Set the target date (November 30, 2023)
-        const targetDate = new Date('2023-11-30T00:00:00').getTime();
+      // Set the target date (November 30, 2023)
+      const targetDate = new Date("2023-11-30T00:00:00").getTime();
 
-        // Update the countdown every second
-        const countdown = document.getElementById('countdown');
-        const countdownInterval = setInterval(updateCountdown, 1000);
+      // Update the countdown every second
+      const countdown = document.getElementById("countdown");
+      const countdownInterval = setInterval(updateCountdown, 1000);
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
 
-            if (timeRemaining > 0) {
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        if (timeRemaining > 0) {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-                countdown.innerHTML = `
+          countdown.innerHTML = `
                 <div class="countdown-timer">
                     <div class="countdown-item">${days}d</div>
                     <div class="countdown-item">${hours}h</div>
@@ -751,40 +999,55 @@
                     <div class="countdown-item">${seconds}s</div>
                 </div>
             `;
-            } else {
-                clearInterval(countdownInterval);
-                countdown.innerHTML = 'Countdown expired';
-            }
+        } else {
+          clearInterval(countdownInterval);
+          countdown.innerHTML = "Countdown expired";
         }
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
+      }
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
 
-            if (timeRemaining > 0) {
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        if (timeRemaining > 0) {
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            } else {
-                clearInterval(countdownInterval);
-                countdown.innerHTML = 'Countdown expired';
-            }
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0"
+          );
+          document.getElementById("minutes").textContent = String(
+            minutes
+          ).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(
+            seconds
+          ).padStart(2, "0");
+        } else {
+          clearInterval(countdownInterval);
+          countdown.innerHTML = "Countdown expired";
         }
+      }
 
-        // Call the updateCountdown function initially
-        updateCountdown();
+      // Call the updateCountdown function initially
+      updateCountdown();
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
-        </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <script src="calendar.js"></script>
-
-</body>
-
+  </body>
 </html>
+ 
