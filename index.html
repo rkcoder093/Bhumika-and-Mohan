@@ -158,7 +158,7 @@
     }
 
     .countdown-number {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     .countdown-label {
@@ -222,81 +222,7 @@
       /* Adjust the scaling factor as needed */
     }
 
-    /* callender */
-    /* Reset some default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-    }
-
-    .calendar {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-    }
-
-    .month {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .calendar-table {
-      width: 100%;
-    }
-
-    th {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    td {
-      padding: 10px;
-      text-align: center;
-    }
-
-    /* Add heartbeat animation */
-    @keyframes heartbeat {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    .highlight {
-      animation: heartbeat 1s infinite;
-      color: #e74c3c;
-      /* Red color */
-      font-weight: bold;
-    }
-
-    /* Add your CSS styling here */
-    .bio {
-      margin: 20px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .bio img {
-      max-width: 200px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
 
     .profession {
       font-style: italic;
@@ -401,7 +327,7 @@
           >
             <div class="col-auto">
               <div class="countdown-circle">
-                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-number" id="days" style="margin: 4px;">00</div>
                 <div class="countdown-label">days</div>
               </div>
             </div>
@@ -655,7 +581,7 @@
       
   
   
-      <div class="row featurette" style="background-color: #fdf077; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <div class="row featurette" style="background-image: url(./img/des1.jpg); background-size: cover; background-position: center; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <div class="col-md-4 order-md-2 d-flex justify-content-center flex-column align-items-center">
           <h2 class="featurette-heading fw-bold lh-1 text-danger">MEHENDI CEREMONY</h2>
           <p class="lead"><strong class="text-dark">Date:</strong> 28-Nov-2023</p>
